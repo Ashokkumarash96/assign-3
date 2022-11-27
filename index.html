@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Text Conversion</title>
+    <!-- Favicon Link -->
+    <link rel="icon" type="image/x-icon" href="./assets/images/favicon.png" />
+    <!-- FontAwesome CDN -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="./styles/normalize.css" />
+    <!-- custom css -->
+    <style>
+      body {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: linear-gradient(#516569, #4b4083);
+        background-repeat: no-repeat;
+      }
+      input {
+        border-radius: 10px;
+      }
+      button {
+        border-radius: 10px;
+      }
+      div {
+        color: white;
+      }
+      h1,
+      #output {
+        color: rgb(210, 137, 34);
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <h1>Convert text to Header</h1>
+      <input type="text" id="input" placeholder="Enter the Text" />
+      <button id="button-show">SUBMIT</button>
+      <button id="button-h1">H1</button>
+      <button id="button-h2">H2</button>
+      <button id="button-h3">H3</button>
+      <div id="output"></div>
+    </div>
+    <!-- custom script -->
+    <script>
+      //variable
+      const input = document.querySelector("#input");
+      const h1Button = document.querySelector("#button-h1");
+      const h2Button = document.querySelector("#button-h2");
+      const h3Button = document.querySelector("#button-h3");
+      const output = document.querySelector("#output");
+      const showButton = document.querySelector("#button-show");
+
+      //global variable
+      const H1Size = 32;
+      const H2Size = 24;
+      const H3Size = 18.72;
+
+      //function
+      function showOutput() {
+        output.innerText = input.value;
+      }
+
+      function h1Handler() {
+        output.style.fontSize = `${H1Size}px`;
+        output.innerText = input.value;
+      }
+
+      function h2Handler() {
+        output.style.fontSize = `${H2Size}px`;
+        output.innerText = input.value;
+      }
+
+      function h3Handler() {
+        output.style.fontSize = `${H3Size}px`;
+        output.innerText = input.value;
+      }
+
+      //Event Listener
+      showButton.addEventListener("click", showOutput);
+      h1Button.addEventListener("click", h1Handler);
+      h2Button.addEventListener("click", h2Handler);
+      h3Button.addEventListener("click", h3Handler);
+    </script>
+  </body>
+</html>
